@@ -21,7 +21,7 @@ from url_utils import extract_data
 
 # from utils import generate_data_set
 
-url_data = pd.read_csv('database/e1.csv')
+url_data = pd.read_csv('e1.csv')
 urls = url_data['url']
 extract_urls = []
 for i, url in enumerate(urls, 1):
@@ -33,4 +33,4 @@ for i, url in enumerate(urls, 1):
     'Iframe','Links_pointing_to_page','Age_of_domain','Statistical_report','Class']
     df = pd.DataFrame(extract_urls, columns=columns)
     result = pd.concat([url_data, df], axis=1)
-    result.to_csv('database/extract_urls.csv', index=False)
+    result.to_csv('extract_urls.csv', index=False)
