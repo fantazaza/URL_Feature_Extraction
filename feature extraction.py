@@ -21,7 +21,7 @@ from url_utils import extract_data
 
 # from utils import generate_data_set
 
-url_data = pd.read_csv('database/e1.csv')
+url_data = pd.read_csv('e1.csv')#<----- You can change the csv file but it must be a URL
 urls = url_data['url']
 extract_urls = []
 for i, url in enumerate(urls, 1):
