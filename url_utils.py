@@ -241,6 +241,8 @@ def extract_data(url):
     status.append(check_url_in_csv(csv_file_path,url))
  #!13
     status.append(dns_rec(hostname))
+ #!14
+   # status.append(0)#<------ You can define class
  #!Check array
     print(status)
     return status
