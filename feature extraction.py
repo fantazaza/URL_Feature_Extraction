@@ -21,16 +21,15 @@ from url_utils import extract_data
 
 # from utils import generate_data_set
 
-url_data = pd.read_csv('e1.csv')
+url_data = pd.read_csv('.csv')
 urls = url_data['url']
 extract_urls = []
 for i, url in enumerate(urls, 1):
     extract_urls.append(extract_data(url))
     print(i ,"/",len(urls), extract_data(url))
-    columns = ['Having_IP_Address','Shortening_Service','having_At_Symbol','Double_slash_redirecting',
-    'Prefix_Suffix','having_Sub_Domain','SSLfinal_state','Domain_registeration_length','Favicon','Port','HTTPS_token',
-    'Request_URL','URL_of_Anchor','Links_in_tags','SFH','Submitting_to_email','Redirect','on_mouseover',
-    'Iframe','Links_pointing_to_page','Age_of_domain','Statistical_report','Class']
+    columns = ['Having_IP_Address','Shortening_Service','Having_At_Symbol','Double_slash_redirecting',
+    'Prefix_Suffix','Having_Sub_Domain','SSLfinal_state','Domain_registeration_length','Favicon'
+    ,'Links_pointing_to_page','Age_of_domain','Check_url_in_csv','DNS_Record']#<----- You can add class in columns.
     df = pd.DataFrame(extract_urls, columns=columns)
     result = pd.concat([url_data, df], axis=1)
     result.to_csv('extract_urls.csv', index=False)
