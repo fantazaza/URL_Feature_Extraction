@@ -196,7 +196,7 @@ def read_csv(csv_file_path):
 def check_url_in_csv(csv_file_path, url):
     urls = read_csv(csv_file_path)
     return 1 if url in urls else -1
-csv_file_path = 'mlengine/phishing_verified_online.csv'
+csv_file_path = 'phishing_verified_online.csv'
 #!Get hostname
 def get_hostname_from_url(url):
     hostname = url
